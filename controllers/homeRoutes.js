@@ -50,7 +50,7 @@ router.get('/blog/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
      const blogData = await Blog.findAll({
