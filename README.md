@@ -57,6 +57,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 ## Contributing
 Cloning the repo is welcome. Do not push new code into the repo without creating a pull requests
 
+![Alt text](<assets/Screenshot 2023-11-18 211040.png>)
 
 ## Credits
 
