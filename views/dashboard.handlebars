@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+
+  {{#if projects.length}}
+  <div class="col-md-6 blog-list">
+    <h3>Current Projects:</h3>
+
+    {{#each projects as |blog|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+
+<button><a href="/dashboard/new">Add New Blog</a></button>
