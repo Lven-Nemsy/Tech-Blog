@@ -86,4 +86,25 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+     const blogData = await Blog.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    // Serialize data so the template can read it
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    res.render('dashboard', {
+      ...blogs,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}
+);
+
 module.exports = router;
